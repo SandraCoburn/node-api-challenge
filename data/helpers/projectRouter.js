@@ -19,21 +19,6 @@ router.post("/", (req, res) => {
     });
 });
 
-//create new action for a project
-router.post("/:id/actions", (req, res) => {
-  const { id } = req.params;
-  const newAction = { ...req.body, project_id: id };
-  console.log(newAction);
-  Actions.insert(newAction)
-    .then(action => {
-      res.statusus(200).json(action);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ message: "Error sending new action" });
-    });
-});
-
 //Get all projects from database
 router.get("/", (req, res) => {
   console.log("request", req.body);
@@ -89,6 +74,18 @@ router.delete("/:id", (req, res) => {
     .catch(err => {
       console.log(err);
       res.status(500).json({ message: "error deleting project" });
+    });
+});
+
+//Retrieve a list of actions by project
+router.get("/:id/posts", (req, res) => {
+  Projects.get(req.params.id)
+    .then(actions => {
+      res.status(200).json(actions);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: "error with the server" });
     });
 });
 
