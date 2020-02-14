@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express is a web framework that adds extra functionality to node.js, express is a node.js module.
+
 - [ ] Describe Middleware?
+
+Middleware are functions that have access to the request, response and next objects. Middleware can execute any code, make changes to the the req and res objects, end the req-res cycle and call the next middleware in the stack.
 
 - [ ] Describe a Resource?
 
+In a RESTful application everything is a resource, accessible via a unique URI. resources can have multiple representations.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+It returns the resource and the code showing it was successful.
+
 - [ ] How can we partition our application into sub-applications?
+
+By using routing,
 
 ## Minimum Viable Product
 
