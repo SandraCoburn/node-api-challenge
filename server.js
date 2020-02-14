@@ -5,7 +5,7 @@ const actionsRouter = require("./data/helpers/actionsRouter");
 
 //routes - endpoint
 server.use("/api/projects", projectRouter);
-server.use("api/actions", actionsRouter);
+server.use("/api/actions", actionsRouter);
 
 //Global middleware
 server.use(express.json());

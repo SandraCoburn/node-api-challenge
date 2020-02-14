@@ -78,8 +78,8 @@ router.delete("/:id", (req, res) => {
 });
 
 //Retrieve a list of actions by project
-router.get("/:id/posts", (req, res) => {
-  Projects.get(req.params.id)
+router.get("/:id/actions", (req, res) => {
+  Projects.getProjectActions(req.params.id)
     .then(actions => {
       res.status(200).json(actions);
     })
